@@ -7,6 +7,18 @@ menu.addEventListener('click', function(event) {
     if (clickTarget.classList.contains('nav-link')) {
         activeBtn.classList.remove('active')
         clickTarget.classList.add('active')
+        let mobile = document.querySelector(".mobile-menu")
+        if (!mobile.classList.contains("hide")) {
+            mobile.classList.add("hide")
+        }
+    }
+    let body = document.querySelector ("body")
+    let mobilemenu = document.querySelector (".mobile-menu")
+    if (!body.classlist.contains("offscroll")&& !mobilemenu.classlist.contains("hide")){
+        body.classList.add("offscroll")
+    }
+    else{
+        body.classList.remove("offscroll")
     }
 })
 let classLink = '.main-link'
@@ -34,3 +46,10 @@ window.onscroll = function(){
         activeBtn.classList.remove('active')
     }
 }
+document.querySelector(".mobile-img").addEventListener(
+    "click", function(event){
+        document.querySelector(".mobile-menu").classList.toggle("hide") 
+        
+    }
+    
+)
